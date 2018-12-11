@@ -7,14 +7,16 @@ Desc: Remove blank spaces from a file
 
 void main()
 {
-	FILE *input;
-	char string[20];
-	input = fopen("input.txt", "r+");
+	FILE *input, *output;
+	char ch;
+	input = fopen("input.txt", "r");
+	output = fopen("output.txt", "w");
 	while(!feof(input))
 	{
 		ch = getc(input);
-		if(ch == ' ')
-			
+		if(ch != ' ')
+			putc(ch, output);
 	}
 	fclose(input);
+	fclose(output);
 }
