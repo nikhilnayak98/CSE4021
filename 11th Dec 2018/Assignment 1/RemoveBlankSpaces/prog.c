@@ -11,9 +11,8 @@ void main()
 	char ch;
 	input = fopen("input.txt", "r");
 	output = fopen("output.txt", "w");
-	while(!feof(input))
+	while((ch = getc(input)) != EOF)
 	{
-		ch = getc(input);
 		if(ch != ' ')
 			putc(ch, output);
 	}

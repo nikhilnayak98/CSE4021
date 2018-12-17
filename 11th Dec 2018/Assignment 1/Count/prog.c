@@ -1,7 +1,7 @@
 /*
 Name: Nikhil Ranjan Nayak
 Regd no: 1641012040
-Desc: Count characters of a file
+Desc: Count characters, spaces, tabs and newlines of a file
 */
 #include "stdio.h"
 
@@ -11,9 +11,8 @@ void main()
 	char ch;
 	int chars = 0, spaces = 0, tabs = 0, newlines = 0;
 	file = fopen("input.txt", "r");
-	while(!feof(file))
+	while((ch = fgetc(file)) != EOF)
 	{
-		ch = getc(file);
 		if(ch == ' ')
 			spaces++;
 		else if(ch == '\t')

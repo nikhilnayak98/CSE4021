@@ -16,14 +16,13 @@ void main()
 {
 	FILE *output;
 	output = fopen("records.txt", "a");
-	printf("\nEnter id - ");
+	printf("Enter id - ");
 	scanf("%d", &stud.id);
-	printf("\nEnter name - ");
+	printf("Enter name - ");
 	scanf("%s", stud.name);
-	printf("\nEnter age - ");
+	printf("Enter age - ");
 	scanf("%d", &stud.age);
-	fprintf(output, "%d", stud.id);
-	fprintf(output, "%s\n", stud.name);
-	fprintf(output, "%d\n", stud.age);
+	fprintf(output, "\n%d\n%s\n%d", stud.id, stud.name, stud.age);
+	//fwrite(&stud, sizeof(struct student), 1, output);
 	fclose(output);
 }

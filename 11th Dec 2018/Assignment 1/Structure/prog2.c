@@ -15,7 +15,9 @@ struct student
 void main()
 {
 	FILE *input;
+	char temp;
 	input = fopen("records.txt", "r");
+	fscanf(input, "%c", &temp);
 	while(!feof(input))
 	{
 		fscanf(input, "%d", &stud.id);
@@ -26,5 +28,15 @@ void main()
 		printf("\nAge - %d", stud.age);
 		printf("\n");
 	}
+	/*while(fread(&stud, sizeof(struct student), 2, input))
+	{
+		fscanf(input, "%d", &stud.id);
+		fscanf(input, "%s", stud.name);
+		fscanf(input, "%d", &stud.age);
+		printf("\nID - %d", stud.id);
+		printf("\nName - %s", stud.name);
+		printf("\nAge - %d", stud.age);
+		printf("\n");
+	}*/
 	fclose(input);
 }

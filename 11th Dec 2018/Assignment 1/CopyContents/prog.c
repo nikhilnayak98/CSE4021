@@ -11,12 +11,17 @@ void main()
 	char ch;
 	input = fopen("input.txt", "r");
 	output = fopen("output.txt", "w");
+	/*
 	while(!feof(input))
 	{
 		ch = getc(input);
 		putc(ch, output);
 	}
-	printf("\n");
+	*/
+	while((ch = fgetc(input)) != EOF)
+	{
+		fputc(ch, output);
+	}
 	fclose(input);
 	fclose(output);
 }

@@ -9,10 +9,10 @@ void main()
 {
 	FILE *output;
 	char string[20];
-	output = fopen("output.txt", "w");
+	output = fopen("output.txt", "a");
 	printf("\nEnter string - ");
 	scanf("%s", string);
-	fprintf(output, "%s", string);
+	fprintf(output, "%s\n", string);
 	printf("\n");
 	fclose(output);
 }

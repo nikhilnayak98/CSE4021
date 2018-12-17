@@ -9,16 +9,16 @@ void main()
 {
 	FILE *output;
 	char ch;
-	output = fopen("output.txt", "w");
-	printf("\nEnter characters - ");
-	scanf("%c", &ch);
-	if(ch != '~')
+	int FLAG = 1;
+	output = fopen("output.txt", "a");
+	printf("Enter characters: ");
+	while(FLAG)
 	{
-		while(ch != '~')
-		{
-			scanf("%c", &ch);
+		scanf("%c", &ch);
+		if(ch == '~')
+			FLAG = 0;
+		else
 			putc(ch, output);
-		}
 	}
 	fclose(output);
 }
