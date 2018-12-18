@@ -28,5 +28,15 @@ void main()
 		printf("\nAge - %d", stud.age);
 		printf("\n");
 	}
+	
+	/*// Using fread()
+	while(fread(&stud, sizeof(struct student), 1, input))
+	{
+		printf("\nID - %d", stud.id);
+		printf("\nName - %s", stud.name);
+		printf("\nAge - %d", stud.age);
+		printf("\n");
+	}
 	fclose(input);
+	*/
 }

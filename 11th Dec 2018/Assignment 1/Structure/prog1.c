@@ -29,6 +29,9 @@ void main()
 		printf("Enter age - ");
 		scanf("%d", &stud.age);
 		fprintf(output, "\n%d\n%s\n%d", stud.id, stud.name, stud.age);
+		/* Using fwrite()
+		fwrite(&stud, sizeof(struct student), 1, output);
+		*/
 	}
 	fclose(output);
 }
