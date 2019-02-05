@@ -1,0 +1,5 @@
+90+=  – Invalid
+987  – Number
+po()*  – Invalid
+jh78  – Identifier
+.
