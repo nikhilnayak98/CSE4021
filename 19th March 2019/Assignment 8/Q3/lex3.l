@@ -1,11 +1,12 @@
 %{
 	#include <stdio.h>
-	int sum = 0;
 %}
 
 space [ \t]+
 
 %%
+
+	int sum = 0;
 
 I	sum += 1;
 IV	sum += 4;
@@ -25,7 +26,7 @@ M	sum += 1000;
 
 %%
 
-int main (void)
+int main()
 {
 	int a, b;
 	a = yylex();
