@@ -1,5 +1,6 @@
 %{
 	#include<stdio.h>
+	#include<ctype.h>
 	char lower, capital, space;
 %}
 
@@ -10,11 +11,11 @@ capital [A-Z]
 %%
 
 {lower} {
-    printf("%c", yytext[0] - 32);
+    printf("%c", toupper(yytext[0]));
 }
 
 {capital} {
-    printf("%c", yytext[0] + 32);
+    printf("%c", tolower(yytext[0]));
 }
 
 {space} ECHO;
