@@ -32,8 +32,8 @@ auto|double|int|struct|break|else|long|switch|case|enum|register|typedef|char|ex
 	printf("%s - Single Line Comment\n", yytext);
 }
 
-"/*"([a-z]|[0-9]|[A-Z]|" "\""\n")+"*/"  {
-	printf("%s - MultiLine Comment\n", yytext);
+"/*"([^*]|[*][^/])*"*/"  {
+	printf("%s - Multiline Comment\n", yytext);
 }
 
 \"(\\.|[^"\\])*\" {
